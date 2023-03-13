@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PatrickGODWebApiEF7SQL.props" />
+</Project>
