@@ -29,6 +29,8 @@ namespace PatrickGODWebApiEF7SQL.Controllers
         {
             return Ok(characters[0]);
         }
+
+        //COntinue from 48:00  https://www.youtube.com/watch?v=9zJn3a7L1uE
     }
 }
 
