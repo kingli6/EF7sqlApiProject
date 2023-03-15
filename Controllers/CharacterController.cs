@@ -7,32 +7,69 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PatrickGODWebApiEF7SQL.Models;
+// using PatrickGODWebApiEF7SQL.Services.CharacterService;
 
 namespace PatrickGODWebApiEF7SQL.Controllers
 {
     [ApiController] //timestamp 30:00
-    [Route("api/[controller]")] //api/Character   showed the Knight object on the browser..?
+    [Route("api/[controller]")] //api/Character   Character is the controllers name
     public class CharacterController : ControllerBase
     {
+        private static ModelA modelAObject = new ModelA();  //
+
         private static List<Character> characters = new List<Character>{
-            new Character(), new Character {Name = "Sam"}
+            new Character(), new Character {Id = 1, Name = "Sam"}
         };
+        private readonly ICharacterService _characterService;
+
+        public CharacterController(ICharacterService characterService)
+        {
+            _characterService = characterService;
+
+        }
+
 
         [HttpGet("GetAll")]
         public ActionResult<List<Character>> Get()
         {
-            return Ok(characters);
+            return Ok(_characterService.GetAllCharacters());
         }
 
-        [HttpGet]
-        public ActionResult<Character> GetSingle()
+        [HttpGet("{id}")]
+        public ActionResult<Character> GetSingle(int id)
         {
-            return Ok(characters[0]);
+            return Ok(_characterService.GetCharacterById(id));
         }
 
+        [HttpPost]
+        public ActionResult<List<Character>> AddCharacter(Character newCharacter)
+        {
+
+            return Ok(_characterService.AddCharacter(newCharacter));
+        }
+
+        [HttpGet("modelA/GetAll")]
+        public ActionResult<ModelA> GetmodelA()
+        {
+            return Ok(modelAObject);
+        }
         //COntinue from 48:00  https://www.youtube.com/watch?v=9zJn3a7L1uE
+
+
+        // //Notes
+        // public Charactar GetCharactedById(int id){
+        //     var character = character.FirstOrDefault(c => c.id == id);
+        //     if (character is not null)
+        //         return character;
+
+        //     throw new Exception("Character not found");
+        // }
     }
 }
+
+
+
 
 //SCRAP
 
