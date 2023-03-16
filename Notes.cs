@@ -155,7 +155,14 @@
 
 
 /*NOtes
-
+1:23:00 DTO's are classes that we use to send and retrieve object with limited properties. IF the model class has properties such as Id and password,
+we shouldn't pass those back and forth through API's. Instead we use DTO that has enough properties so we don't expose sensitive information. 
+Next step is to use automappers that maps from Dto's to model and back. so far we have;
+    Models
+    Iservices and Services
+    Controllers
+    Dto's 
+    Mapper
 
 1:15:00 so far. 
     We created CharacterService that does the retrieving of the data. Later,

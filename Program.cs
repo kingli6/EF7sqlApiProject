@@ -1,6 +1,6 @@
 global using PatrickGODWebApiEF7SQL.Models; //https://www.youtube.com/watch?v=9zJn3a7L1uE timestamp 30:50
 global using PatrickGODWebApiEF7SQL.Services.CharacterService;
-
+global using PatrickGODWebApiEF7SQL.Dtos.Character;
 
 var builder = WebApplication.CreateBuilder(args);
 
