@@ -157,7 +157,10 @@
 /*NOtes
 
 
-
+1:15:00 so far. 
+    We created CharacterService that does the retrieving of the data. Later,
+    we create Service Response that sends the data but has the ability to add if it was successful or not, with a message.
+    We have the controller that does the HTTP request. 
 
 injecting ICharacterService into your controller //it's nice to know that you can bring in a file through depedency injection. 
     We are bringing in an interface. into the contructor   58:00  https://www.youtube.com/watch?v=9zJn3a7L1uE
