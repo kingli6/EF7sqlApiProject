@@ -31,3 +31,5 @@ D:\Programming\Learning NetEFSQLLINQ\PatrickGODWebApiEF7SQL\obj\Debug\net7.0\ref
 D:\Programming\Learning NetEFSQLLINQ\PatrickGODWebApiEF7SQL\obj\Debug\net7.0\PatrickGODWebApiEF7SQL.pdb
 D:\Programming\Learning NetEFSQLLINQ\PatrickGODWebApiEF7SQL\obj\Debug\net7.0\PatrickGODWebApiEF7SQL.genruntimeconfig.cache
 D:\Programming\Learning NetEFSQLLINQ\PatrickGODWebApiEF7SQL\obj\Debug\net7.0\ref\PatrickGODWebApiEF7SQL.dll
+D:\Programming\Learning NetEFSQLLINQ\PatrickGODWebApiEF7SQL\bin\Debug\net7.0\AutoMapper.dll
+D:\Programming\Learning NetEFSQLLINQ\PatrickGODWebApiEF7SQL\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -14,8 +14,13 @@
 //                 .ToListAsync();
 //         }
 
-
-
+// public IActionResult Index()
+// {
+//     var orders = context.orders
+//         .Include(orders => orders.LineItems)
+//         .ThenInclude(lineItem => lineItem.Product)
+//         .Where(orders => order.OrderDate > DateTime.UtcNow.AddDays(-1)).ToList();... ) //https://app.pluralsight.com/course-player?clipId=09231630-49b5-4702-a2d8-4e4d46845713 2:13
+// }
 
 
 
@@ -47,13 +52,23 @@
 //     throw new Exception("Character not found");
 // }
 
+// public async Task<ActionResult<List<Character>>> Get(int userId)
+// {       //22:52  https://www.youtube.com/watch?v=FHx6AGVF_IE&list=WL&index=1&t=2s
+//     var characters = await _context.characters
+//         .Where(c => c.UserId == userId)
+//         .ToListAsync();
 
+//     return characters
+// }
 
+/*In summary, FindAsync is used to retrieve a single entity by its primary key, FirstOrDefault is used to retrieve the first entity that matches a specified condition, and .Where(x => x.userId == userId) is used to retrieve a subset of entities that match a specified condition.*/
 
+// if (!_pieRepository.AllPies.Any(p => p.PieId == id))    //https://app.pluralsight.com/course-player?clipId=bcbf2d8f-8492-4558-95cd-5d0953d47c2a 2:41
+//     return NotFound();
 
+// return Ok(_pieRepository.AllPies.Where(p => p.PieId == id));
 
-
-
+// .Where(p => p.Name.Contains(searchQuery));
 
 
 
@@ -69,7 +84,13 @@
 //             await _context.Categories.AddAsync(_mapper.Map<Category>(model));
 //         }
 
+// public async Task<ActionResult<List<Character>>> Create(Character character)     //26:00 https://www.youtube.com/watch?v=FHx6AGVF_IE&list=WL&index=1&t=2s
+// {
+//     _context.Characters.Add(character);
+//     await _context.SaveChangesAsync();
 
+//     return await GetCharacterDto(character.UserId);
+// }
 
 
 
