@@ -1,4 +1,4 @@
-//Notes
+//Notes https://www.notion.so/Work-journal-2a8b60600c5244d4a35743ef12885c7a
 
 
 
@@ -40,8 +40,6 @@
 
 //             return _mapper.Map<CategoryViewModel>(response);
 //         }
-
-
 
 // public Charactar GetCharactedById(int id)
 // {
@@ -100,19 +98,38 @@
 
 // // Edit category   PUT
 //         public async Task UpdateCategoryAsync(int id, PutCategoryViewModel model)
-
 //         {
 //             var response = await _context.Categories.FindAsync(id);
 
 //             if (response == null)
-//             {
 //                 throw new NotFoundException();
-//             }
-
+//             
 //             _context.Categories.Update(_mapper.Map(model, response));
 //         }
 
+// public override Product Update(Product entity) //https://app.pluralsight.com/course-player?clipId=aec84ad1-3510-4fcb-b703-25edff6e9043 timestamp 1:25
+// {
+//     var product = context.Products
+//         .Single(p => p.ProductId == entity.ProductId);
 
+//     product.Name = entity.Name;
+//     product.Price = entity.Price;
+
+//     return base.Update(product); //we don't know what base.Update does.
+// }
+
+// public override Order Update(OrderedParallelQuery entity)
+// {
+//     var order = ContextBoundObject.Orders
+//         .Include(o => o.LineItems)
+//         .ThenInclude(l => l.Product)
+//         .Single(o => o.OrderId == entity.OrderId);
+
+//     order.OrderDate = entity.OrderDate;
+//     order.LineItems = entity.LineItems;
+
+//     return base.Update(order);
+// }
 
 
 
@@ -177,11 +194,13 @@
 
 /*NOtes
 
+
+
 nuget.org, we'll download AutoMapper package. 
     >>dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version 12.0.0       //skip the --version... if it's not important
 
 1:23:00 DTO's are classes that we use to send and retrieve object with limited properties. IF the model class has properties such as Id and password,
-we shouldn't pass those back and forth through API's. Instead we use DTO that has enough properties so we don't expose sensitive information. 
+we shouldn't pass those back and forth through API's. Instead we use DTO's that has enough properties so we don't expose sensitive information. 
 Next step is to use automappers that maps from Dto's to model and back. so far we have;
     Models
     Iservices and Services
