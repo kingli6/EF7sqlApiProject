@@ -39,7 +39,7 @@ namespace PatrickGODWebApiEF7SQL.Services.CharacterService
         {
             var serviceResponse = new ServiceResponse<GetCharacterDto>();
             var character = characters.FirstOrDefault(c => c.Id == id); //1:03:00
-            serviceResponse.Data = _mapper.Map<GetCharacterDto>(characters);
+            serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
             return serviceResponse;
         }
     }
